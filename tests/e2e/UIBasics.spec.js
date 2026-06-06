@@ -35,7 +35,6 @@
 
    
   await frameLocator.locator("a[href*='lifetime-access']:visible").nth(0).click();
-   await page.pause(10000);
  });
  
 
