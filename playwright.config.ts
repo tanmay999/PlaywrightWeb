@@ -50,9 +50,15 @@ export default defineConfig({
     
     },
 
-    /*{
+    {
       name: 'firefox',
-      use: { ...devices['Desktop Firefox'] },
+      use: { ...devices['Desktop Firefox'],
+        browserName: 'firefox',
+        headless: false,
+        screenshot: 'only-on-failure',
+        trace : 'on-first-retry',
+
+       },
     },
 
     {
