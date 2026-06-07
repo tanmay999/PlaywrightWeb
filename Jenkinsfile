@@ -30,7 +30,7 @@ pipeline {
 
   post {
   always {
-    archiveArtifacts artifacts: 'playwright-report/**'
+    archiveArtifacts artifacts: 'playwright-report/**', fingerprint: true
 
     publishHTML([
       reportDir: 'playwright-report',
