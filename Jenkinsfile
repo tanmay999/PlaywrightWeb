@@ -29,18 +29,17 @@ pipeline {
   }
 
   post {
-    always {
+  always {
+    archiveArtifacts artifacts: 'playwright-report/**'
 
-      archiveArtifacts artifacts: 'playwright-report/**', fingerprint: true
-
-      publishHTML([
-        reportDir: 'playwright-report',
-        reportFiles: 'index.html',
-        reportName: 'Playwright HTML Report',
-        keepAll: true,
-        alwaysLinkToLastBuild: true,
-        allowMissing: true
-      ])
-    }
+    publishHTML([
+      reportDir: 'playwright-report',
+      reportFiles: 'index.html',
+      reportName: 'Playwright Report',
+      keepAll: true,
+      alwaysLinkToLastBuild: true
+    ])
   }
 }
+}
+
