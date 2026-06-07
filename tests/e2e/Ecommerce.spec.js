@@ -22,7 +22,7 @@ test.describe('Ecommerce Flow', () => {
         response = await apiUtils.createOrder(orderPayload);
     });
 
-    test.only('Place order and verify in UI', async ({page})=>{
+    test('Place order and verify in UI', async ({page})=>{
     
     
       await  page.addInitScript ( value=> {
