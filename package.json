@@ -7,7 +7,11 @@
     "test": "npx playwright test",
     "test:headed": "npx playwright test --headeded",
     "test:report": "npx playwright show report",
-    "test:ui": "npx playwright test --ui"
+    "test:ui": "npx playwright test --ui",
+    "test:chromium": "npx playwright test --project=chromium",
+    "APItest": "npx playwright test tests/e2e/testApi.spec.js --project=chromium",
+    "Ecomtest": "npx playwright test tests/e2e/Ecommerce.spec.js --project=chromium",
+    "UItest": "npx playwright test tests/e2e/UIBasics.spec.js "
   },
   "keywords": [],
   "author": "",

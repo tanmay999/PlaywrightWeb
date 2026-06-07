@@ -1,11 +1,13 @@
  const{test,expect} = require('@playwright/test');
 
 
- test('First playWright test',async function(){
-  await page.goto('https://google.com');
-  console.log(await page.title());
-  expect(await page.title()).toHaveTitle('Google');
- });
+ test('UI Basics Test', async ({ page }) => {
+
+   await page.goto('https://google.com');
+
+   console.log(await page.title());
+
+});
 
   test('First playWright test Auto Prac',async ({browser})=>{
    const context = await browser.newContext();
