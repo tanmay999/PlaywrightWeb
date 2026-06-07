@@ -7,8 +7,7 @@
     "test": "npx playwright test",
     "test:headed": "npx playwright test --headeded",
     "test:report": "npx playwright show report",
-    "test:ui": "npx playwright test --ui",
-    "test:chromium": "npx playwright test --project=chromium"
+    "test:ui": "npx playwright test --ui"
   },
   "keywords": [],
   "author": "",
@@ -16,6 +15,7 @@
   "type": "commonjs",
   "devDependencies": {
     "@playwright/test": "^1.60.0",
-    "@types/node": "^25.9.1"
+    "@types/node": "^25.9.1",
+    "allure": "^3.9.0"
   }
 }

@@ -65,7 +65,7 @@ test('Home page direct ',async ({page})=>{
   await expect(MyCartTitle).toHaveText('My Cart');
 });
 
-test.only('Order Page Validation',async ({page})=>{
+test('Order Page Validation',async ({page})=>{
 
   await  page.addInitScript ( value=> {
      window.localStorage.setItem('token',value);
@@ -77,7 +77,7 @@ test.only('Order Page Validation',async ({page})=>{
     const orderRow = orderTable.locator('tr').nth(0);
     const orderIdLocator = orderRow.locator('th');
     await expect(orderIdLocator).toHaveText(orderId);
-    await page.pause();
+   
   });
 
 

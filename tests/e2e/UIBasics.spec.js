@@ -7,7 +7,7 @@
   expect(await page.title()).toHaveTitle('Google');
  });
 
-  test.only('First playWright test Auto Prac',async ({browser})=>{
+  test('First playWright test Auto Prac',async ({browser})=>{
    const context = await browser.newContext();
     const page = await context.newPage();
     const hideText = page.locator("#hide-textbox");
