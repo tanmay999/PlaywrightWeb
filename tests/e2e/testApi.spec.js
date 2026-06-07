@@ -90,6 +90,17 @@ test.afterAll(() => {
   console.log('This will run after all tests');
 });
 
-test.afterEach(() => {
-  console.log('This will run after each test');
+
+test.afterEach(async ({ page }, testInfo) => {
+
+  if (testInfo.status !== testInfo.expectedStatus) {
+
+    const screenshot = await page.screenshot();
+
+    await testInfo.attach('Failure Screenshot', {
+      body: screenshot,
+      contentType: 'image/png'
+    });
+  }
+
 });

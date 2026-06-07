@@ -74,3 +74,17 @@
     await expect(page.locator("[style*='block']")).toContainText('Incorrect username');
    await page.screenshot({ path: 'screenshotErrorLogin.png' });
  });
+
+ test.afterEach(async ({ page }, testInfo) => {
+
+  if (testInfo.status !== testInfo.expectedStatus) {
+
+    const screenshot = await page.screenshot();
+
+    await testInfo.attach('Failure Screenshot', {
+      body: screenshot,
+      contentType: 'image/png'
+    });
+  }
+
+});

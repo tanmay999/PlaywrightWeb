@@ -63,4 +63,19 @@ test.describe('Ecommerce Flow', () => {
 
     });
 
+
+    test.afterEach(async ({ page }, testInfo) => {
+
+  if (testInfo.status !== testInfo.expectedStatus) {
+
+    const screenshot = await page.screenshot();
+
+    await testInfo.attach('Failure Screenshot', {
+      body: screenshot,
+      contentType: 'image/png'
+    });
+  }
+
+});
+
 });
